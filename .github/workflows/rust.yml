@@ -35,3 +35,8 @@ jobs:
           use-cross: true
           command: test
           args: --release --target=armv7-unknown-linux-musleabihf
+      - name: upload binary artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: pipes-and-rust
+          path: target

@@ -1,4 +1,4 @@
-extern crate simple_server;
+eextern crate simple_server;
 
 use std::env;
 use std::fs::{self, File};
@@ -19,7 +19,7 @@ use crate::DigitizerEvent::*;
 struct Asset;
 
 fn main() {
-    let server_port = env::var("PORT").unwrap_or("80".to_owned());
+    let server_port = env::var("WEB_PORT").unwrap_or("80".to_owned());
 
     let server = Server::new(|_, mut response| {
         Ok(response.body(Vec::from(Asset::get("index.html").unwrap().data))?)

@@ -26,7 +26,7 @@ fn main() {
     });
 
     let model = fs::read_to_string("/proc/device-tree/model")
-        .expect("Something went wrong reading the file");
+        .expect("Something went wrong reading the model from /proc/device-tree/model");
 
     let event_file = match model.as_str() {
         "reMarkable 1.0\u{0}" => "/dev/input/event0",
